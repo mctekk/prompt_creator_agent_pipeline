@@ -33,12 +33,14 @@ on:
   push:
     branches:
       - '"main"'
+  workflow_dispatch:
 
 env:
   PROJECT_ID: ${{secrets.GCP_PROJECT_ID}}
   REGION: ${{secrets.GCP_REGION}}
   SERVICE: ${{secrets.GCP_SEARCHER_CLOUD_RUN_SERVICE}}
   GCP_IDENTITY_PROVIDER: ${{secrets.GCP_IDENTITY_PROVIDER}}
+  AGENT_DOCKERFILE_PATH: ${{secrets.AGENT_DOCKERFILE_PATH}}
 
 jobs:
   deploy:
